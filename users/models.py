@@ -13,6 +13,8 @@ class CustomUser(AbstractUser):
     cpf = models.CharField(max_length=11)
     status = models.CharField(max_length=3, default='A', choices=STATUS_CHOICES)
 
+    USERNAME_FIELD = 'email'
+
     class Meta:
         db_table = 'user'
 
